@@ -107,8 +107,8 @@
         <div class="listing__list">
             {% for listing in listings %}
             <div class="listing__item">
-                <div class="listing__item__pic set-bg" data-setbg={{ listing.med_image.url }}>
-                    <img src="{% static 'img/listing/list_icon-1.png' %}" alt="">
+                 <div class="listing__item__pic set-bg" data-setbg={{ listing.med_image.url }}>
+                    <a href={{ listing.slug }}> <img src={{ listing.small_image.url }} alt=""></a>
                     <div class="listing__item__pic__tag">Popular</div>
                     <div class="listing__item__pic__btns">
                         <a href="#"><span class="icon_heart_alt"></span></a>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="listing__item__text">
                     <div class="listing__item__text__inside">
-                        <a href={{ listing.slug }}><h5>{{ listing.title }}</h5>
+                        <a href={{ listing.slug }}><h5>{{ listing.title }}</h5></a>
                         <div class="listing__item__text__rating">
                             <div class="listing__item__rating__star">
                                 <span class="icon_star"></span>
