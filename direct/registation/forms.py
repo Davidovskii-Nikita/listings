@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserCreationForm
 from django.forms import TextInput, EmailField, CharField, PasswordInput
 
@@ -29,6 +31,11 @@ class LoginForm(AuthenticationForm):
     )
 
 class RegForm(UserCreationForm):
+
+    class Meta:
+        model = get_user_model()
+        fields = ("username",)
+        field_classes = {"username": UsernameField}
 
     username = CharField(
         widget=TextInput(

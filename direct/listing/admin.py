@@ -42,7 +42,7 @@ class ReviewAdmin(admin.ModelAdmin):
 
 @admin.register(UserModel)
 class UserModelAdmin(admin.ModelAdmin):
-    list_display = ['avatar']
+    list_display =   ['username','avatar','email' ]
 
 
 
